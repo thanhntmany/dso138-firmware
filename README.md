@@ -46,5 +46,8 @@ sudo stm32flash /dev/ttyUSB0 -w ./113-13801-061.hex -b 115200
 - Apply power to the oscilloscope again. Check if the oscilloscope boots up properly. Verify if the
 firmware versions are correct. If everything is good the upgrading is done.
 
+### Step 5:
+Check the resistor R11. If it is 1.5KΩ, replace it by a 150Ω.
+
 # MISC
 https://github.com/ardyesp/DLO-138
