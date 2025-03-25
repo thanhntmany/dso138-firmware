@@ -31,8 +31,12 @@ Power up the oscilloscope.
 
 ### Step 3
 ```bash
-# Unlock the flash of the STM32:
+# Unlock the STM32:
+# - Turn of the read protection
 sudo stm32flash /dev/ttyUSB0 -k -b 115200
+# - (Optional) clear the memory:
+sudo stm32flash /dev/ttyUSB0 -o
+# - Turn off the flash write protection
 sudo stm32flash /dev/ttyUSB0 -u -b 115200
 
 # flash hex
@@ -43,11 +47,11 @@ sudo stm32flash /dev/ttyUSB0 -w ./113-13801-061.hex -b 115200
 
 - Power off DSO138 and disconnect the connection.
 - Remove the solders on JP1 and JP2.
-- Apply power to the oscilloscope again. Check if the oscilloscope boots up properly. Verify if the
-firmware versions are correct. If everything is good the upgrading is done.
+- Check the resistor R11. If it is 1.5KΩ, replace it by a 150Ω.
 
-### Step 5:
-Check the resistor R11. If it is 1.5KΩ, replace it by a 150Ω.
+### Step 5
+Apply power to the oscilloscope again. Check if the oscilloscope boots up properly. Verify if the
+firmware versions are correct. If everything is good the upgrading is done.
 
 # MISC
 https://github.com/ardyesp/DLO-138
